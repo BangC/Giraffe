@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{99656910-65f4-4ef1-b94f-960cd3ad2b4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Base">
+      <UniqueIdentifier>{0aed0d31-9253-4334-8de1-2d4b306b345f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Platform">
+      <UniqueIdentifier>{c169ca4b-b151-40d0-b5b0-ac55f186b088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Unit">
+      <UniqueIdentifier>{984c5612-eacf-4c6f-ac96-16df78caac2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Giraffe.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Base\Type.h">
+      <Filter>Src\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Unit\CardUnit.h">
+      <Filter>Src\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Unit\GameRole.h">
+      <Filter>Src\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Unit\JobMng.h">
+      <Filter>Src\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Unit\CardInfo.h">
+      <Filter>Src\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Unit\CardInfoMng.h">
+      <Filter>Src\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Platform\GameSimulator.h">
+      <Filter>Src\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Unit\Deck.h">
+      <Filter>Src\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Unit\DeckMng.h">
+      <Filter>Src\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Unit\JobInfo.h">
+      <Filter>Src\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Unit\UserData.h">
+      <Filter>Src\Unit</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Giraffe.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Unit\CardUnit.cpp">
+      <Filter>Src\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Unit\GameRole.cpp">
+      <Filter>Src\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Unit\JobMng.cpp">
+      <Filter>Src\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Unit\CardInfo.cpp">
+      <Filter>Src\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Unit\CardInfoMng.cpp">
+      <Filter>Src\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Platform\GameSimulator.cpp">
+      <Filter>Src\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Unit\Deck.cpp">
+      <Filter>Src\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Unit\DeckMng.cpp">
+      <Filter>Src\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="GiraffeDll.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Unit\JobInfo.cpp">
+      <Filter>Src\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Unit\UserData.cpp">
+      <Filter>Src\Unit</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
