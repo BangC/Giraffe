@@ -1,0 +1,3 @@
+[submodule "Source/3rdParty/json"]
+	path = Source/3rdParty/json
+	url = https://github.com/BangC/json.git
