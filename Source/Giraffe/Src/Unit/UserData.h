@@ -4,7 +4,6 @@
 
 #include "../Base/Type.h"
 
-#include "JobInfo.h"
 #include "DeckMng.h"
 
 namespace Giraffe
@@ -15,7 +14,6 @@ namespace Giraffe
 		UserData();
 		virtual ~UserData();
 	protected:
-		SharedPtr<JobInfo> myJob;
 		SharedPtr<DeckMng> myDecks;
 
 	};

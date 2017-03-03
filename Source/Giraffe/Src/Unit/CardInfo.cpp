@@ -2,6 +2,7 @@
 
 #include "CardInfo.h"
 
+#include"JobInfo.h"
 namespace Giraffe
 {
 

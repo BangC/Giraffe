@@ -3,8 +3,6 @@
 
 #include "../Base/Type.h"
 
-#include "CardInfoMng.h"
-#include "JobMng.h"
 
 namespace Giraffe
 {
@@ -13,9 +11,7 @@ namespace Giraffe
 	public:
 		GameRole();
 		virtual ~GameRole();
-	protected:
-		SharedPtr<JobMng> jobList;
 
-		std::shared_ptr<CardInfoMng> cardInfoList;
+	protected:
 	};
 }

@@ -23,6 +23,8 @@ namespace Giraffe
 
 	template<typename DataType>
 	using SharedPtr = std::shared_ptr<DataType>;
+	template<typename DataType>
+	using WeakPtr = std::weak_ptr<DataType>;
 
 	typedef std::wstring String;
 

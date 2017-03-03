@@ -72,6 +72,12 @@
     <ClInclude Include="Src\Unit\UserData.h">
       <Filter>Src\Unit</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Unit\GameRoleMng.h">
+      <Filter>Src\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Platform\GameDataSystem.h">
+      <Filter>Src\Platform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -115,6 +121,12 @@
     </ClCompile>
     <ClCompile Include="Src\Unit\UserData.cpp">
       <Filter>Src\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Unit\GameRoleMng.cpp">
+      <Filter>Src\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Platform\GameDataSystem.cpp">
+      <Filter>Src\Platform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

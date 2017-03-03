@@ -3,6 +3,7 @@
 
 #include "../Base/Type.h"
 
+#include "JobInfo.h"
 #include "CardUnit.h"
 
 namespace Giraffe
@@ -13,6 +14,7 @@ namespace Giraffe
 		Deck();
 		virtual ~Deck();
 
+		SharedPtr<JobInfo> myJob;
 		Vector<SharedPtr<CardUnit>> cardList;
 	};
 }

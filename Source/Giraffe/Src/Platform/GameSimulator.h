@@ -15,7 +15,7 @@ namespace Giraffe
 		GameSimulator();
 		virtual ~GameSimulator();
 	protected:
-		SharedPtr<GameRole> gameRole;
-		Vector<SharedPtr<UserData>> userList;
+		WeakPtr<GameRole> gameRole;
+		Vector<WeakPtr<UserData>> playUsers;
 	};
 }

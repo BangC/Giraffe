@@ -18,3 +18,10 @@
 
 
 #include "../Giraffe/Src/Giraffe.h"
+
+#include "../3rdParty/json/src/json.hpp"
+using JsonData = nlohmann::json;
+
+
+
+void MakeJsonData();

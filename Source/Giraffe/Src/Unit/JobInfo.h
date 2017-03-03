@@ -12,5 +12,7 @@ namespace Giraffe
 	public:
 		JobInfo();
 		virtual ~JobInfo();
+	protected:
+		SharedPtr<CardInfo> cardInfo;
 	};
 }
