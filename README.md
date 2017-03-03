@@ -1,2 +1,2 @@
 # Giraffe
-CardGame Library
+CardGame Simulator
