@@ -7,7 +7,7 @@ namespace Giraffe
 {
 	class JobInfo;
 
-	class CardInfo
+	class CardInfo : public BaseObject
 	{
 	public:
 		CardInfo();

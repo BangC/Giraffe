@@ -28,8 +28,26 @@ namespace Giraffe
 
 	typedef std::wstring String;
 
-	class Object
+	class BaseObject
 	{
 	public:
+		BaseObject()
+		{
+
+		}
+		virtual ~BaseObject()
+		{
+
+		}
+	protected:
+		String name;
+		String uniqueKey;
 	};
+
+	/*
+	부족한것 만들어야할것
+
+	1.
+	*/
+
 }

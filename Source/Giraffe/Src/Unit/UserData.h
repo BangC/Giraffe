@@ -8,7 +8,7 @@
 
 namespace Giraffe
 {
-	class UserData
+	class UserData : public BaseObject
 	{
 	public:
 		UserData();

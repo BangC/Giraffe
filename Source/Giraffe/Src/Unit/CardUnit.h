@@ -8,7 +8,7 @@
 
 namespace Giraffe
 {
-	class CardUnit
+	class CardUnit : public BaseObject
 	{
 	public:
 		CardUnit();

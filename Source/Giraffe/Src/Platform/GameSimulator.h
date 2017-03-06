@@ -9,7 +9,7 @@
 
 namespace Giraffe
 {
-	class GameSimulator
+	class GameSimulator : public BaseObject
 	{
 	public:
 		GameSimulator();

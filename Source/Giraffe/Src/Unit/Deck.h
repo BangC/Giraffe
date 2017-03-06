@@ -9,7 +9,7 @@
 namespace Giraffe
 {
 
-	class Deck
+	class Deck : public BaseObject
 	{
 		Deck();
 		virtual ~Deck();
