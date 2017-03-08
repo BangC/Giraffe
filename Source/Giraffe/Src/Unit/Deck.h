@@ -15,6 +15,6 @@ namespace Giraffe
 		virtual ~Deck();
 
 		SharedPtr<JobInfo> myJob;
-		Vector<SharedPtr<CardUnit>> cardList;
+		Vector<WeakPtr<CardUnit>> cardList;
 	};
 }

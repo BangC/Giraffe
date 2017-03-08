@@ -8,7 +8,8 @@
 int main()
 {
 
-	MakeJsonData();
+	auto loadString = MakeJsonData();
+
 
 
 
@@ -21,8 +22,10 @@ int main()
 }
 
 
-void MakeJsonData()
+Giraffe::AString MakeJsonData()
 {
+	//Giraffe::SharedPtr<JsonData> returnJData = Giraffe::SharedPtr<JsonData>(new JsonData());
+	//JsonData &jdata = (*returnJData);
 	JsonData jdata;
 
 	/*
@@ -40,72 +43,100 @@ void MakeJsonData()
 			SharedPtr<CardInfoMng> cardInfoMng;
 				Vector<SharedPtr<CardInfo>> cardMap;
 					WeakPtr<JobInfo> usingJob;
+					Vector<WeakPtr<GameRole>> ableRoles;
+					Vector<SharedPtr<CardUnit>> cardForms;
+		GameDataPlay
 			Vector<SharedPtr<UserData>> userList;
 				SharedPtr<DeckMng> myDecks;
 					Vector<SharedPtr<Deck>> deckList;
 						SharedPtr<JobInfo> myJob;
-						Vector<SharedPtr<CardUnit>> cardList;
-							SharedPtr<CardInfo> infoData;
-								Vector<SharedPtr<JobInfo>> jobList;
+						Vector<WeakPtr<CardUnit>> cardList;
 	*/
 
 	jdata["Giraffe"]["Name"] = "Giraffe";
-	jdata["Giraffe"]["UniqueKey"] = "Giraffe";
 	jdata["Giraffe"]["Version"]["Major"] = 0;
 	jdata["Giraffe"]["Version"]["Minor"] = 0;
 	jdata["Giraffe"]["Version"]["Revision"] = 1;
-	jdata["Giraffe"]["Roles"] = {
-		{
+	jdata["Giraffe"]["Static"]["Roles"] = {
+		{ // B.M.Role
 			{"RoleName", "B.M.Role"}
-			,{"UniqueKey", "Role.47D72AE1-93AF-4C79-95A4-2ECF5F2A312D"}
 			, 
 		}
-		,{
+		,{ // B.B.Role
 			{"RoleName", "B.B.Role"}
-			,{"UniqueKey", "Role.2025D374-D22D-4653-A752-2FD2A405E8E9"}
 			,
 		}
-		, {
+		, { // M.M.Role
 			{"RoleName", "M.M.Role"}
-			,{"UniqueKey", "Role.5D10EEF0-C9E6-4554-8991-AC55C1AABF53"}
 			,
 		}
 		, 
 	};
-	jdata["Giraffe"]["Jobs"] = {
-		{
+	jdata["Giraffe"]["Static"]["Jobs"] = {
+		{ // B.1.Job
 			{"JobName", "B.1.Job"}
-			,{"UniqueKey", "Job.DC814C2E-34B6-4C6D-8263-8EFA6D08D8CE"}
-			,
 		}
-		, {
+		, { // B.2.Job
 			{"JobName", "B.2.Job"}
-			,{"UniqueKey", "Job.00F8D969-2C8C-4FD9-9EA4-60104BFA1A62"}
-			,
 		}
-		,{
+		,{ // B.C.Job
 			{"JobName", "B.C.Job"}
-			,{"UniqueKey", "Job.A811C6D2-5B49-4DF3-BD3C-C631C207CE66"}
-			,
+		}
+		,{ // M.1.Job
+			{"JobName", "M.1.Job"}
 		}
 		,
 	};
-	jdata["Giraffe"]["Cards"] = {
-		{
+	jdata["Giraffe"]["Static"]["Cards"] = {
+		{ // 1.Card
 			{"CardName", "1.Card"}
-			, {"UniqueKey", "Card.7A35EB5C-E6A5-4768-8C1D-FEC75A128DBE"}
-			, {"NeedJob", {"Job.DC814C2E-34B6-4C6D-8263-8EFA6D08D8CE"}}
-			, {"AbleRole", {"Role.47D72AE1-93AF-4C79-95A4-2ECF5F2A312D"
-				, "Role.2025D374-D22D-4653-A752-2FD2A405E8E9"}}
+			, {"AbleRole", {"B.M.Role", "B.B.Role"}}
+			, {"AbleForms", {
+				{
+					{"CardFormName", "1.Card.Gold"}
+					, {"Gold", true}
+				}
+			}}
+			, {"NeedJob", {"B.1.Job"}}
 		}
-		, {
+		, { // 2.Card
 			{"CardName", "2.Card"}
-			,{"UniqueKey", "Card.A5B28563-2F6B-47F9-B263-435080287414"}
+			, {"AbleRole", {"B.M.Role", "B.B.Role"}}
+		}
+	};
+	jdata["Giraffe"]["Dynamic"]["Users"] = {
+		{ // PlayerA
+			{"UserName", "PlayerA"}
+			, {"Decks", {
+				{ // deck1
+					{"DackName", "PlayerA.Deck1"}
+					, {"UsingJob", "B.1.Job"}
+					, {"CardUnits", {"1.Card","1.Card.Gold","2.Card"}}
+				}
+				, { // deck2
+					{"DackName", "PlayerA.Deck2"}
+					,{"UsingJob", "B.2.Job"}
+					,{"CardUnits",{"2.Card"}}
+				}
+			}}
+		}
+		, { // PlayerB
+			{"UserName", "PlayerB"}
+			,{"Decks",{
+				{
+					{"DackName", "PlayerB.Deck1"}
+					,{"UsingJob", "B.1.Job"}
+					,{"CardUnits",{"1.Card","1.Card.Gold","2.Card"}}
+				}
+			}}
 		}
 	};
 
 	auto jsonString = jdata.dump();
 
 
-	std::cout << jsonString << std::endl;
+	std::cout << "Data : " << jsonString << std::endl;
+
+	//return returnJData;
+	return jsonString;
 }

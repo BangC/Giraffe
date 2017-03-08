@@ -5,7 +5,6 @@
 #include "../Base/Type.h"
 
 #include "../Unit/GameRoleMng.h"
-#include "../Unit/UserData.h"
 #include "../Unit/CardInfoMng.h"
 #include "../Unit/JobMng.h"
 
@@ -20,6 +19,5 @@ namespace Giraffe
 		SharedPtr<GameRoleMng> gameRoles;
 		SharedPtr<JobMng> jobMng;
 		SharedPtr<CardInfoMng> cardInfoMng;
-		Vector<SharedPtr<UserData>> userList;
 	};
 }

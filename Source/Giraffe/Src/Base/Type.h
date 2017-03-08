@@ -27,6 +27,7 @@ namespace Giraffe
 	using WeakPtr = std::weak_ptr<DataType>;
 
 	typedef std::wstring String;
+	typedef std::string AString;
 
 	class BaseObject
 	{
@@ -41,13 +42,15 @@ namespace Giraffe
 		}
 	protected:
 		String name;
-		String uniqueKey;
+		String displayName;
+		//String uniqueKey;
 	};
 
 	/*
 	부족한것 만들어야할것
 
-	1.
+	. 버전
+	. 싱글턴
 	*/
 
 }

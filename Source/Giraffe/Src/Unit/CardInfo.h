@@ -3,6 +3,8 @@
 
 #include "../Base/Type.h"
 
+#include "GameRole.h"
+
 namespace Giraffe
 {
 	class JobInfo;
@@ -14,5 +16,6 @@ namespace Giraffe
 		virtual ~CardInfo();
 	protected:
 		WeakPtr<JobInfo> usingJob;
+		Vector<WeakPtr<GameRole>> ableRoles;
 	};
 }

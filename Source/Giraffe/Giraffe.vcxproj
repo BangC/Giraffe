@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="Src\Base\Type.h" />
     <ClInclude Include="Src\Giraffe.h" />
+    <ClInclude Include="Src\Platform\GameDataPlay.h" />
     <ClInclude Include="Src\Platform\GameDataSystem.h" />
     <ClInclude Include="Src\Platform\GameSimulator.h" />
     <ClInclude Include="Src\Unit\CardInfo.h" />
@@ -182,6 +183,7 @@
     </ClCompile>
     <ClCompile Include="GiraffeDll.cpp" />
     <ClCompile Include="Src\Giraffe.cpp" />
+    <ClCompile Include="Src\Platform\GameDataPlay.cpp" />
     <ClCompile Include="Src\Platform\GameDataSystem.cpp" />
     <ClCompile Include="Src\Platform\GameSimulator.cpp" />
     <ClCompile Include="Src\Unit\CardInfo.cpp" />
