@@ -6,8 +6,13 @@
 
 
 
-int DLL_Module WorkMain()
+int DLL_Module WorkMain(Giraffe::AString jsonString)
 {
+
+
+	Giraffe::GiraffeMain gMain;
+
+	gMain.
 
 	return 1;
 
@@ -25,4 +30,15 @@ namespace Giraffe
 	{
 
 	}
+
+	bool GiraffeMain::LoadJson(JsonData &jsonData)
+	{
+		auto jData = jsonData["Giraffe"];
+		name = jData["Name"].get<AString>();
+	}
+
+
+
+
+
 }

@@ -2,7 +2,7 @@
 #include "stdafx.h"
 
 
-
+#include "../"
 
 
 int main()
@@ -11,11 +11,9 @@ int main()
 	auto loadString = MakeJsonData();
 
 
-
-
 	//std::cout << sizeof(Giraffe::Bool8) << std::endl;
 
-	//std::cout << WorkMain() << std::endl;
+	std::cout << WorkMain(loadString) << std::endl;
 
 	system("pause");
     return 0;

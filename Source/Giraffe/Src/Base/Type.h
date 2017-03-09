@@ -7,6 +7,7 @@
 #include <memory>
 #include <string>
 
+#include "../../../3rdParty/json/src/json.hpp"
 namespace Giraffe
 {
 
@@ -29,6 +30,8 @@ namespace Giraffe
 	typedef std::wstring String;
 	typedef std::string AString;
 
+	using JsonData = nlohmann::json;
+
 	class BaseObject
 	{
 	public:
@@ -44,6 +47,27 @@ namespace Giraffe
 		String name;
 		String displayName;
 		//String uniqueKey;
+	};
+
+	class JsonLoader
+	{
+	public:
+		JsonLoader()
+		{
+
+		}
+		virtual ~JsonLoader()
+		{
+
+		}
+
+		virtual bool LoadJson(AString &jsonString)
+		{
+			auto jData = JsonData::parse(jsonString);
+			return LoadJson(jData);
+		}
+		virtual bool LoadJson(JsonData &jsonData) = 0;
+	protected:
 	};
 
 	/*

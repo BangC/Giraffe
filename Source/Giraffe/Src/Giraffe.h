@@ -16,7 +16,7 @@
 #endif // GIRAFFE_EXPORTS
 //#define DLL_Module 
 
-int DLL_Module WorkMain();
+int DLL_Module WorkMain(Giraffe::AString jsonString);
 
 //bool LoadDll()
 
@@ -24,11 +24,14 @@ int DLL_Module WorkMain();
 
 namespace Giraffe
 {
-	class GiraffeMain : public BaseObject
+	class GiraffeMain : public BaseObject, public JsonLoader
 	{
 	public:
 		GiraffeMain();
 		virtual ~GiraffeMain();
+
+	public:
+		virtual bool LoadJson(JsonData &jsonData);
 	protected:
 		SharedPtr<GameSimulator> gameSimulator;
 		SharedPtr<GameDataSystem> gameData;
