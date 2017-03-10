@@ -14,4 +14,14 @@ namespace Giraffe
 	{
 
 	}
+
+
+	void CardInfoMng::ShowDebug()
+	{
+
+		LOG(INFO) << "[CardInfoMng]";
+		BaseObject::ShowDebug();
+
+		BaseObjectMng<CardInfo>::ShowDebug();
+	}
 }

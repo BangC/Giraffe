@@ -1,3 +1,6 @@
 [submodule "Source/3rdParty/json"]
 	path = Source/3rdParty/json
 	url = https://github.com/BangC/json.git
+[submodule "Source/3rdParty/glog"]
+	path = Source/3rdParty/glog
+	url = https://github.com/BangC/glog.git

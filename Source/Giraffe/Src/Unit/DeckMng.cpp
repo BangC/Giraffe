@@ -16,4 +16,11 @@ namespace Giraffe
 
 	}
 
+	void DeckMng::ShowDebug()
+	{
+		LOG(INFO) << "[DeckMng]";
+		BaseObject::ShowDebug();
+
+		BaseObjectMng<Deck>::ShowDebug();
+	}
 }

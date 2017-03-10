@@ -148,6 +148,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Base\log.h" />
     <ClInclude Include="Src\Base\Type.h" />
     <ClInclude Include="Src\Giraffe.h" />
     <ClInclude Include="Src\Platform\GameDataPlay.h" />
@@ -182,6 +183,8 @@
       </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="GiraffeDll.cpp" />
+    <ClCompile Include="Src\Base\log.cpp" />
+    <ClCompile Include="Src\Base\Type.cpp" />
     <ClCompile Include="Src\Giraffe.cpp" />
     <ClCompile Include="Src\Platform\GameDataPlay.cpp" />
     <ClCompile Include="Src\Platform\GameDataSystem.cpp" />
@@ -197,6 +200,11 @@
     <ClCompile Include="Src\Unit\JobMng.cpp" />
     <ClCompile Include="Src\Unit\UserData.cpp" />
     <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\3rdParty\glog\vsprojects\libglog_static\libglog_static.vcxproj">
+      <Project>{772c2111-bbbf-49e6-b912-198a7f7a88e5}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

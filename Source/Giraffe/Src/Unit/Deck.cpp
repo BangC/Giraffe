@@ -14,4 +14,20 @@ namespace Giraffe
 	{
 
 	}
+
+	Bool8 Deck::LoadJson(JsonData &jsonData)
+	{
+
+		name = StringConv(jsonData["DackName"].get<AString>());
+		displayName = name;
+
+		return true;
+	}
+	void Deck::ShowDebug()
+	{
+
+
+		LOG(INFO) << "[Deck]";
+		BaseObject::ShowDebug();
+	}
 }

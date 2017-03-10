@@ -12,4 +12,14 @@ namespace Giraffe
 	{
 	}
 
+
+	void JobMng::ShowDebug()
+	{
+
+		LOG(INFO) << "[JobMng]";
+		BaseObject::ShowDebug();
+
+		BaseObjectMng<JobInfo>::ShowDebug();
+	}
+
 }

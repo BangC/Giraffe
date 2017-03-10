@@ -13,4 +13,9 @@ namespace Giraffe
 	GameSimulator::~GameSimulator()
 	{
 	}
+
+	Bool8 GameSimulator::LoadJson(JsonData &jsonData)
+	{
+		return true;
+	}
 }

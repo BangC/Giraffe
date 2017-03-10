@@ -14,4 +14,18 @@ namespace Giraffe
 	{
 
 	}
+
+	Bool8 JobInfo::LoadJson(JsonData &jsonData)
+	{
+		name = StringConv(jsonData["JobName"].get<AString>());
+		displayName = name;
+
+		return true;
+	}
+	void JobInfo::ShowDebug()
+	{
+
+		LOG(INFO) << "[JobInfo]";
+		BaseObject::ShowDebug();
+	}
 }

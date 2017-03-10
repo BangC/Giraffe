@@ -12,4 +12,12 @@ namespace Giraffe
 	{
 
 	}
+
+	void GameRoleMng::ShowDebug()
+	{
+
+		LOG(INFO) << "[GameRoleMng]";
+		BaseObject::ShowDebug();
+		BaseObjectMng<GameRole>::ShowDebug();
+	}
 }

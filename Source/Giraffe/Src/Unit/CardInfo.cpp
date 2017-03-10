@@ -15,4 +15,21 @@ namespace Giraffe
 	{
 
 	}
+
+	Bool8 CardInfo::LoadJson(JsonData &jsonData)
+	{
+
+		name = StringConv(jsonData["CardName"].get<AString>());
+		displayName = name;
+
+		return true;
+	}
+	void CardInfo::ShowDebug()
+	{
+
+
+		LOG(INFO) << "[CardInfo]";
+		BaseObject::ShowDebug();
+	}
+
 }

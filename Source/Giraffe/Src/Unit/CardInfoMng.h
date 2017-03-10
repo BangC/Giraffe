@@ -8,13 +8,15 @@
 
 namespace Giraffe
 {
-	class CardInfoMng : public BaseObject
+	class CardInfoMng : public BaseObjectMng<CardInfo>
 	{
 	public:
 		CardInfoMng();
 		virtual ~CardInfoMng();
 
+	public:
+		virtual void ShowDebug();
+
 	protected:
-		Vector<SharedPtr<CardInfo>> cardMap;
 	};
 }

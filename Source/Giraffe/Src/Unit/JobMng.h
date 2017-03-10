@@ -8,14 +8,17 @@
 
 namespace Giraffe
 {
-	class JobMng : public BaseObject
+	class JobMng : public BaseObjectMng<JobInfo>
 	{
 	public:
 		JobMng();
 		virtual ~JobMng();
 
+	public:
+		virtual void ShowDebug();
+
+
 	protected:
-		Vector<SharedPtr<JobInfo>> jobList;
 	};
 
 }

@@ -24,4 +24,4 @@ using JsonData = nlohmann::json;
 
 
 
-void MakeJsonData();
+Giraffe::AString MakeJsonData();

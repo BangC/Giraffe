@@ -10,11 +10,17 @@
 
 namespace Giraffe
 {
-	class GameDataSystem : public BaseObject
+	class GameDataSystem : public BaseObject, public JsonLoader
 	{
 	public:
 		GameDataSystem();
 		virtual ~GameDataSystem();
+
+	public:
+		virtual Bool8 LoadJson(JsonData &jsonData);
+		virtual void ShowDebug();
+
+
 	protected:
 		SharedPtr<GameRoleMng> gameRoles;
 		SharedPtr<JobMng> jobMng;

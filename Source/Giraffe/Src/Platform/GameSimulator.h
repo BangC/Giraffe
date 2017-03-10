@@ -9,11 +9,16 @@
 
 namespace Giraffe
 {
-	class GameSimulator : public BaseObject
+	class GameSimulator : public BaseObject, public JsonLoader
 	{
 	public:
 		GameSimulator();
 		virtual ~GameSimulator();
+
+	public:
+		virtual Bool8 LoadJson(JsonData &jsonData);
+
+
 	protected:
 		WeakPtr<GameRole> gameRole;
 		Vector<WeakPtr<UserData>> playUsers;

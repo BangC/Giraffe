@@ -7,13 +7,15 @@
 
 namespace Giraffe
 {
-	class GameRoleMng : public BaseObject
+	class GameRoleMng : public BaseObjectMng<GameRole>
 	{
 	public:
 		GameRoleMng();
 		virtual ~GameRoleMng();
 
+	public:
+		virtual void ShowDebug();
+
 	protected:
-		Vector<SharedPtr<GameRole>> roleList;
 	};
 }

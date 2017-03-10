@@ -7,13 +7,15 @@
 
 namespace Giraffe
 {
-	class DeckMng : public BaseObject
+	class DeckMng : public BaseObjectMng<Deck>
 	{
 	public:
 		DeckMng();
 		virtual ~DeckMng();
 
+	public:
+		virtual void ShowDebug();
+
 	protected:
-		Vector<SharedPtr<Deck>> deckList;
 	};
 }

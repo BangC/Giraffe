@@ -2,8 +2,6 @@
 #include "stdafx.h"
 
 
-#include "../"
-
 
 int main()
 {
@@ -133,7 +131,7 @@ Giraffe::AString MakeJsonData()
 	auto jsonString = jdata.dump();
 
 
-	std::cout << "Data : " << jsonString << std::endl;
+	std::cout << "Data : " << jsonString << std::endl << std::endl << std::endl;
 
 	//return returnJData;
 	return jsonString;
