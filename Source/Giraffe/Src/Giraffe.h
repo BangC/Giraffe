@@ -34,6 +34,8 @@ namespace Giraffe
 		virtual Bool8 LoadJson(JsonData &jsonData);
 		virtual void ShowDebug();
 
+		Bool8 LogInit();
+
 
 	protected:
 		SharedPtr<GameSimulator> gameSimulator;

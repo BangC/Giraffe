@@ -7,7 +7,7 @@
 
 namespace Giraffe
 {
-	class GameRoleMng : public BaseObjectMng<GameRole>
+	class GameRoleMng : public BaseObjectMng<GameRole, GameRoleMng>
 	{
 	public:
 		GameRoleMng();

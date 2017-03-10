@@ -44,6 +44,11 @@ namespace Giraffe
 		}
 	}
 
+	String BaseObject::GetName()
+	{
+		return name;
+	}
+
 	//////////////////////////////////////////////////////////////////////////
 
 	JsonLoader::JsonLoader()

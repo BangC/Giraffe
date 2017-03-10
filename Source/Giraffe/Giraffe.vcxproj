@@ -148,6 +148,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Base\Instance.h" />
     <ClInclude Include="Src\Base\log.h" />
     <ClInclude Include="Src\Base\Type.h" />
     <ClInclude Include="Src\Giraffe.h" />

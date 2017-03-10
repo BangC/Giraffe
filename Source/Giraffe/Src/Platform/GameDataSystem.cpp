@@ -6,11 +6,10 @@
 namespace Giraffe
 {
 	GameDataSystem::GameDataSystem()
-		: gameRoles(new GameRoleMng)
-		, jobMng(new JobMng)
-		, cardInfoMng(new CardInfoMng)
 	{
-
+		GameRoleMng::CreateInstance();
+		JobMng::CreateInstance();
+		CardInfoMng::CreateInstance();
 	}
 
 	GameDataSystem::~GameDataSystem()
@@ -24,19 +23,19 @@ namespace Giraffe
 
 		Bool8 returnResult = false;
 
-		returnResult = gameRoles->LoadJson(jsonData["Roles"]);
+		returnResult = GameRoleMng::GetInstance()->LoadJson(jsonData["Roles"]);
 		if (!returnResult)
 		{
 			return returnResult;
 		}
 
-		returnResult = jobMng->LoadJson(jsonData["Jobs"]);
+		returnResult = JobMng::GetInstance()->LoadJson(jsonData["Jobs"]);
 		if (!returnResult)
 		{
 			return returnResult;
 		}
 
-		returnResult = cardInfoMng->LoadJson(jsonData["Cards"]);
+		returnResult = CardInfoMng::GetInstance()->LoadJson(jsonData["Cards"]);
 		if (!returnResult)
 		{
 			return returnResult;
@@ -50,8 +49,10 @@ namespace Giraffe
 
 		LOG(INFO) << "[GameDataSystem]";
 		BaseObject::ShowDebug();
-		gameRoles->ShowDebug();
-		jobMng->ShowDebug();
-		cardInfoMng->ShowDebug();
+		auto roleMng = GameRoleMng::GetInstance();
+
+		GameRoleMng::GetInstance()->ShowDebug();
+		JobMng::GetInstance()->ShowDebug();
+		CardInfoMng::GetInstance()->ShowDebug();
 	}
 }

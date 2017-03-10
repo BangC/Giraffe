@@ -8,7 +8,7 @@
 
 namespace Giraffe
 {
-	class JobMng : public BaseObjectMng<JobInfo>
+	class JobMng : public BaseObjectMng<JobInfo, JobMng>
 	{
 	public:
 		JobMng();

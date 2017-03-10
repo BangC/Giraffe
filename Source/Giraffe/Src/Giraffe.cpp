@@ -30,14 +30,22 @@ namespace Giraffe
 		: gameSimulator(new GameSimulator)
 		, gameData(new GameDataSystem)
 	{
-		google::InitGoogleLogging("Giraffe_Test");
-		google::SetLogDestination(google::GLOG_INFO, "./Test.");
-		//google::SetLogFilenameExtension(".BC.log");
-		google::LogToStderr();
+		LogInit();
 	}
 	GiraffeMain::~GiraffeMain()
 	{
 
+	}
+
+	Bool8 GiraffeMain::LogInit()
+	{
+
+		google::InitGoogleLogging("Giraffe_Test");
+		google::SetLogDestination(google::GLOG_INFO, "./Test.");
+		//google::SetLogFilenameExtension(".BC.log");
+		google::LogToStderr();
+
+		return true;
 	}
 
 	Bool8 GiraffeMain::LoadJson(JsonData &jsonData)

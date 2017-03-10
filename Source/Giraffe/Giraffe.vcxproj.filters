@@ -84,6 +84,9 @@
     <ClInclude Include="Src\Base\log.h">
       <Filter>Src\Base</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Base\Instance.h">
+      <Filter>Src\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -144,5 +147,4 @@
       <Filter>Src\Base</Filter>
     </ClCompile>
   </ItemGroup>
-  
 </Project>

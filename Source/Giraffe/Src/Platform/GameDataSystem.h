@@ -22,8 +22,5 @@ namespace Giraffe
 
 
 	protected:
-		SharedPtr<GameRoleMng> gameRoles;
-		SharedPtr<JobMng> jobMng;
-		SharedPtr<CardInfoMng> cardInfoMng;
 	};
 }

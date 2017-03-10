@@ -13,6 +13,7 @@
 #include "../../../3rdParty/json/src/json.hpp"
 
 #include "log.h"
+#include "Instance.h"
 
 
 namespace Giraffe
@@ -31,6 +32,8 @@ namespace Giraffe
 
 	template<typename DataType>
 	using Vector = std::vector<DataType>;
+	template<typename KeyType, typename DataType>
+	using Map = std::map<KeyType, DataType>;
 
 	template<typename DataType>
 	using SharedPtr = std::shared_ptr<DataType>;
@@ -53,6 +56,7 @@ namespace Giraffe
 
 	public:
 		virtual void ShowDebug();
+		String GetName();
 
 	protected:
 		String name;
@@ -60,8 +64,8 @@ namespace Giraffe
 		//String uniqueKey;
 	};
 
-	template<typename TypeData>
-	class BaseObjectMng : public BaseObject, public JsonLoader
+	template<typename TypeData, typename TypeInstance>
+	class BaseObjectMng : public BaseObject, public JsonLoader, public CInstance<TypeInstance>
 	{
 	public:
 		BaseObjectMng()
@@ -96,6 +100,7 @@ namespace Giraffe
 				{
 					return returnResult;
 				}
+				dataMap[(*dataIter)->GetName()] = (*dataIter);
 				++dataIter;
 			}
 			return returnResult;
@@ -108,8 +113,14 @@ namespace Giraffe
 				dataOne->ShowDebug();
 			}
 		}
+
+		WeakPtr<TypeData> &GetDataFromKey(String keyID)
+		{
+			return dataMap.at(keyID);
+		}
 	protected:
 		Vector<SharedPtr<TypeData>> dataList;
+		Map<String, WeakPtr<TypeData>> dataMap;
 	};
 
 	class JsonLoader

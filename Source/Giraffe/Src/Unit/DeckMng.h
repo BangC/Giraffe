@@ -7,7 +7,7 @@
 
 namespace Giraffe
 {
-	class DeckMng : public BaseObjectMng<Deck>
+	class DeckMng : public BaseObjectMng<Deck, DeckMng>
 	{
 	public:
 		DeckMng();
