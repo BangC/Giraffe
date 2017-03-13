@@ -20,6 +20,7 @@ namespace Giraffe
 {
 
 
+
 	typedef int Int32;
 	typedef long long Int64;
 	typedef float Float32;
@@ -48,6 +49,16 @@ namespace Giraffe
 
 	using JsonData = nlohmann::json;
 
+
+	//////////////////////////////////////////////////////////////////////////
+
+	const Int32 VersionMajor = 0;
+	const Int32 VersionMinor = 0;
+	const Int32 VersionRevision = 2;
+
+
+	//////////////////////////////////////////////////////////////////////////
+
 	class BaseObject
 	{
 	public:
@@ -64,8 +75,8 @@ namespace Giraffe
 		//String uniqueKey;
 	};
 
-	template<typename TypeData, typename TypeInstance>
-	class BaseObjectMng : public BaseObject, public JsonLoader, public CInstance<TypeInstance>
+	template<typename TypeData>
+	class BaseObjectMng : public BaseObject, public JsonLoader
 	{
 	public:
 		BaseObjectMng()
@@ -106,6 +117,27 @@ namespace Giraffe
 			return returnResult;
 		}
 
+		template<typename TypeInit>
+		Bool8 LoadJson(JsonData &jArray, TypeInit& initData)
+		{
+			Bool8 returnResult = false;
+			dataList.resize(jArray.size());
+			auto dataIter = dataList.begin();
+
+			for (auto& element : jArray)
+			{
+				dataIter->reset(new TypeData(initData));
+				returnResult = (*dataIter)->LoadJson(element);
+				if (!returnResult)
+				{
+					return returnResult;
+				}
+				dataMap[(*dataIter)->GetName()] = (*dataIter);
+				++dataIter;
+			}
+			return returnResult;
+		}
+
 		virtual void ShowDebug()
 		{
 			for (auto& dataOne : dataList)
@@ -114,9 +146,14 @@ namespace Giraffe
 			}
 		}
 
-		WeakPtr<TypeData> &GetDataFromKey(String keyID)
+		WeakPtr<TypeData> &GetDataFromName(String keyID)
 		{
 			return dataMap.at(keyID);
+		}
+
+		WeakPtr<TypeData> &GetDataFromName(AString keyID)
+		{
+			return dataMap.at(StringConv(keyID));
 		}
 	protected:
 		Vector<SharedPtr<TypeData>> dataList;
@@ -136,9 +173,7 @@ namespace Giraffe
 
 	/*
 	부족한것 만들어야할것
-
-	. 버전
-	. 싱글턴
+	.
 	*/
 
 }

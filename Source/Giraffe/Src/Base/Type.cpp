@@ -34,18 +34,22 @@ namespace Giraffe
 
 	void BaseObject::ShowDebug()
 	{
-		if (!name.empty())
-		{
-			LOG(INFO) << "name : " << StringConv(name);
-		}
 		if (!displayName.empty())
 		{
 			LOG(INFO) << "displayName : " << StringConv(displayName);
+		}
+		else if (!name.empty())
+		{
+			LOG(INFO) << "name : " << StringConv(name);
 		}
 	}
 
 	String BaseObject::GetName()
 	{
+		if (!displayName.empty())
+		{
+			return displayName;
+		}
 		return name;
 	}
 

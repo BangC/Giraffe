@@ -19,7 +19,7 @@ namespace Giraffe
 		LOG(INFO) << "[JobMng]";
 		BaseObject::ShowDebug();
 
-		BaseObjectMng<JobInfo, JobMng>::ShowDebug();
+		BaseObjectMng<JobInfo>::ShowDebug();
 	}
 
 }

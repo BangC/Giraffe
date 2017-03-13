@@ -19,6 +19,11 @@ namespace Giraffe
 
 	Bool8 GameDataSystem::LoadJson(JsonData &jsonData)
 	{
+		if (jsonData.empty())
+		{
+			LOG(ERROR) << "No Data";
+			return false;
+		}
 // 		LOG(INFO) << "GameDataSystem::jsonData.dump()" << jsonData.dump();
 
 		Bool8 returnResult = false;
@@ -49,7 +54,6 @@ namespace Giraffe
 
 		LOG(INFO) << "[GameDataSystem]";
 		BaseObject::ShowDebug();
-		auto roleMng = GameRoleMng::GetInstance();
 
 		GameRoleMng::GetInstance()->ShowDebug();
 		JobMng::GetInstance()->ShowDebug();

@@ -13,4 +13,20 @@ namespace Giraffe
 	GameDataPlay::~GameDataPlay()
 	{
 	}
+
+	Bool8 GameDataPlay::LoadJson(JsonData &jsonData)
+	{
+		if (jsonData.empty())
+		{
+			LOG(ERROR) << "No Data";
+			return false;
+		}
+		return true;
+	}
+
+	void GameDataPlay::ShowDebug()
+	{
+		LOG(INFO) << "[GameDataPlay]";
+		BaseObject::ShowDebug();
+	}
 }

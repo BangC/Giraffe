@@ -18,6 +18,11 @@ namespace Giraffe
 	Bool8 Deck::LoadJson(JsonData &jsonData)
 	{
 
+		if (jsonData.empty())
+		{
+			LOG(ERROR) << "No Data";
+			return false;
+		}
 		name = StringConv(jsonData["DackName"].get<AString>());
 		displayName = name;
 

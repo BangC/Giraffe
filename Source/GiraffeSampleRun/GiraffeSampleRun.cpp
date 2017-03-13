@@ -52,7 +52,7 @@ Giraffe::AString MakeJsonData()
 	jdata["Giraffe"]["Name"] = "Giraffe";
 	jdata["Giraffe"]["Version"]["Major"] = 0;
 	jdata["Giraffe"]["Version"]["Minor"] = 0;
-	jdata["Giraffe"]["Version"]["Revision"] = 1;
+	jdata["Giraffe"]["Version"]["Revision"] = 2;
 	jdata["Giraffe"]["Static"]["Roles"] = {
 		{ // B.M.Role
 			{"RoleName", "B.M.Role"}

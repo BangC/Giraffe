@@ -151,6 +151,7 @@
     <ClInclude Include="Src\Base\Instance.h" />
     <ClInclude Include="Src\Base\log.h" />
     <ClInclude Include="Src\Base\Type.h" />
+    <ClInclude Include="Src\Base\Version.h" />
     <ClInclude Include="Src\Giraffe.h" />
     <ClInclude Include="Src\Platform\GameDataPlay.h" />
     <ClInclude Include="Src\Platform\GameDataSystem.h" />
@@ -186,6 +187,7 @@
     <ClCompile Include="GiraffeDll.cpp" />
     <ClCompile Include="Src\Base\log.cpp" />
     <ClCompile Include="Src\Base\Type.cpp" />
+    <ClCompile Include="Src\Base\Version.cpp" />
     <ClCompile Include="Src\Giraffe.cpp" />
     <ClCompile Include="Src\Platform\GameDataPlay.cpp" />
     <ClCompile Include="Src\Platform\GameDataSystem.cpp" />

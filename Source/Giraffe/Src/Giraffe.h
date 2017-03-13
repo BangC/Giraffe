@@ -4,9 +4,11 @@
 
 
 #include "Base/Type.h"
+#include "Base/Version.h"
 
 #include "Platform\GameSimulator.h"
 #include "Platform\GameDataSystem.h"
+#include "Platform\GameDataPlay.h"
 
 
 #ifdef GIRAFFE_EXPORTS
@@ -34,11 +36,12 @@ namespace Giraffe
 		virtual Bool8 LoadJson(JsonData &jsonData);
 		virtual void ShowDebug();
 
-		Bool8 LogInit();
-
 
 	protected:
 		SharedPtr<GameSimulator> gameSimulator;
 		SharedPtr<GameDataSystem> gameData;
+		SharedPtr<GameDataPlay> gameDataPlay;
+
+		SharedPtr<VersionData> versionData;
 	};
 }

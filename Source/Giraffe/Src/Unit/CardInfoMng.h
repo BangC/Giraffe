@@ -8,7 +8,7 @@
 
 namespace Giraffe
 {
-	class CardInfoMng : public BaseObjectMng<CardInfo, CardInfoMng>
+	class CardInfoMng : public BaseObjectMng<CardInfo>, public CInstance<CardInfoMng>
 	{
 	public:
 		CardInfoMng();

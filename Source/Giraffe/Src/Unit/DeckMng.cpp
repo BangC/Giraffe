@@ -21,6 +21,6 @@ namespace Giraffe
 		LOG(INFO) << "[DeckMng]";
 		BaseObject::ShowDebug();
 
-		BaseObjectMng<Deck, DeckMng>::ShowDebug();
+		BaseObjectMng<Deck>::ShowDebug();
 	}
 }

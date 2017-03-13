@@ -29,37 +29,45 @@ namespace Giraffe
 	GiraffeMain::GiraffeMain()
 		: gameSimulator(new GameSimulator)
 		, gameData(new GameDataSystem)
+		, gameDataPlay(new GameDataPlay)
+		, versionData(new VersionData)
 	{
-		LogInit();
 	}
 	GiraffeMain::~GiraffeMain()
 	{
 
 	}
 
-	Bool8 GiraffeMain::LogInit()
-	{
-
-		google::InitGoogleLogging("Giraffe_Test");
-		google::SetLogDestination(google::GLOG_INFO, "./Test.");
-		//google::SetLogFilenameExtension(".BC.log");
-		google::LogToStderr();
-
-		return true;
-	}
-
 	Bool8 GiraffeMain::LoadJson(JsonData &jsonData)
 	{
+		if (jsonData.empty())
+		{
+			LOG(ERROR) << "No Data";
+			return false;
+		}
 // 		LOG(INFO) << "GiraffeMain::jsonData.dump()" << jsonData.dump();
 		auto jData = jsonData["Giraffe"];
 		name = StringConv(jData["Name"].get<AString>());
 
-		auto loadResult = gameSimulator->LoadJson(jData["Dynamic"]);
+		auto loadResult = versionData->LoadJson(jData["Version"]);
 		if (!loadResult)
 		{
 			return loadResult;
 		}
+
+// 		loadResult = gameSimulator->LoadJson(jData["Dynamic"]);
+// 		if (!loadResult)
+// 		{
+// 			return loadResult;
+// 		}
+
 		loadResult = gameData->LoadJson(jData["Static"]);
+		if (!loadResult)
+		{
+			return loadResult;
+		}
+
+		loadResult = gameDataPlay->LoadJson(jData["Dynamic"]);
 		if (!loadResult)
 		{
 			return loadResult;
@@ -71,7 +79,10 @@ namespace Giraffe
 	void GiraffeMain::ShowDebug()
 	{
 		LOG(INFO) << "[GiraffeMain]";
+
 		BaseObject::ShowDebug();
+
+		versionData->ShowDebug();
 		gameSimulator->ShowDebug();
 		gameData->ShowDebug();
 	}

@@ -3,18 +3,24 @@
 
 #include "../Base/Type.h"
 
-#include "CardInfo.h"
 
 
 namespace Giraffe
 {
-	class CardUnit : public BaseObject
+	class CardInfo;
+	class CardUnit : public BaseObject, public JsonLoader
 	{
 	public:
 		CardUnit();
+		CardUnit(WeakPtr<CardInfo> infoDataSuper);
 		virtual ~CardUnit();
 
+	public:
+		virtual Bool8 LoadJson(JsonData &jsonData);
+		virtual void ShowDebug();
+
 	protected:
-		SharedPtr<CardInfo> infoData;
+		WeakPtr<CardInfo> infoData;
+		Bool8 goldFome;
 	};
 }

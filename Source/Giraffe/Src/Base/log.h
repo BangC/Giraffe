@@ -7,5 +7,12 @@
 
 namespace Giraffe
 {
+	class LogInit
+	{
+	public:
+		LogInit();
+		virtual ~LogInit();
+	};
+
 
 }
