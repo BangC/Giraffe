@@ -19,6 +19,6 @@ namespace Giraffe
 		virtual void ShowDebug();
 
 	protected:
-		Vector<SharedPtr<UserData>> userList;
+		BaseObjectMng<UserData> userMng;
 	};
 }

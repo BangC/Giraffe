@@ -21,7 +21,7 @@ namespace Giraffe
 		virtual void ShowDebug();
 
 	protected:
-		SharedPtr<JobInfo> myJob;
+		WeakPtr<JobInfo> myJob;
 		Vector<WeakPtr<CardUnit>> cardList;
 	};
 }

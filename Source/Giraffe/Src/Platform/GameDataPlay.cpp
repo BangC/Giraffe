@@ -21,6 +21,10 @@ namespace Giraffe
 			LOG(ERROR) << "No Data";
 			return false;
 		}
+
+		userMng.LoadJson(jsonData["Users"]);
+
+
 		return true;
 	}
 
@@ -28,5 +32,7 @@ namespace Giraffe
 	{
 		LOG(INFO) << "[GameDataPlay]";
 		BaseObject::ShowDebug();
+
+		userMng.ShowDebug();
 	}
 }
