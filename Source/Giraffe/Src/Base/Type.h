@@ -75,9 +75,53 @@ namespace Giraffe
 		//String uniqueKey;
 	};
 
+	template<typename TypeMng>
+	class BaseLinkMng : public BaseObject, public JsonLoader
+	{
+	public:
+		BaseLinkMng()
+		{
+
+		}
+		virtual ~BaseLinkMng()
+		{
+
+		}
+
+	public:
+
+		virtual Bool8 LoadJson(JsonData &jArray)
+		{
+
+			dataLink.resize(jArray.size());
+			auto dataIter = dataLink.begin();
+
+			for (auto &dataStringKey : jArray)
+			{
+				(*dataIter) = TypeMng::GetInstance()->GetDataFromName(dataStringKey.get<AString>());
+				++dataIter;
+			}
+		}
+
+		virtual void ShowDebug()
+		{
+			for (auto &dataWptr : dataLink)
+			{
+				auto dataSptr = dataWptr.lock();
+				LOG(INFO) << "  " << StringConv(dataSptr->GetName());
+			}
+		}
+
+	protected:
+		Vector<WeakPtr<typename TypeMng::DataType>> dataLink;
+
+	};
+
 	template<typename TypeData>
 	class BaseObjectMng : public BaseObject, public JsonLoader
 	{
+	public:
+		typedef TypeData DataType;
 	public:
 		BaseObjectMng()
 		{
