@@ -27,6 +27,7 @@ namespace Giraffe
 		displayName = name;
 
 		myDecks->LoadJson(jsonData["Decks"]);
+		return true;
 	}
 
 	void UserData::ShowDebug()
