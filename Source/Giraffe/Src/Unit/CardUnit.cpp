@@ -2,6 +2,7 @@
 #include "../Base/Type.h"
 
 #include "CardUnit.h"
+#include "CardInfo.h"
 
 namespace Giraffe
 {
@@ -48,4 +49,15 @@ namespace Giraffe
 
 		LOG(INFO) << "GoldForm : " << goldFome;
 	}
+
+	Bool8 CardUnit::SetBaseCard()
+	{
+		auto baseInfo = infoData.lock();
+		name = baseInfo->GetName() + StringConv(".Base");
+		displayName = name;
+		return true;
+	}
+
+
+
 }

@@ -3,6 +3,10 @@
 
 #include "GameDataSystem.h"
 
+#include "../Unit/GameRoleMng.h"
+#include "../Unit/CardInfoMng.h"
+#include "../Unit/JobMng.h"
+
 namespace Giraffe
 {
 	GameDataSystem::GameDataSystem()

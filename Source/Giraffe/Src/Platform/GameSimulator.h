@@ -21,6 +21,6 @@ namespace Giraffe
 
 	protected:
 		WeakPtr<GameRole> gameRole;
-		Vector<WeakPtr<UserData>> playUsers;
+		Vector<WeakPtr<UserData>> playUsers; // BaseLinkMng
 	};
 }

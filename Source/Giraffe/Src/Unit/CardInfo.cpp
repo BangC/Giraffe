@@ -33,29 +33,18 @@ namespace Giraffe
 		name = StringConv(jsonData["CardName"].get<AString>());
 		displayName = name;
 
-		auto &ableRoleDatas = jsonData["AbleRole"];
-		ableRoles.resize(ableRoleDatas.size());
-		auto roleIter = ableRoles.begin();
-
-		for (auto &roleString : ableRoleDatas)
-		{
-			(*roleIter) = GameRoleMng::GetInstance()->GetDataFromName(roleString.get<AString>());
-			++roleIter;
-		}
+		ableRoles.LoadJson(jsonData["AbleRole"]);
 		
 		auto thisPtr = shared_from_this();
+
+		SharedPtr<CardUnit> baseUnit(new CardUnit(thisPtr));
+		baseUnit->SetBaseCard();
+		formMng.Append(baseUnit);
+
 		formMng.LoadJson(jsonData["AbleForms"], thisPtr);
 
 
-		auto &needJobDatas = jsonData["NeedJob"];
-		needJob.resize(needJobDatas.size());
-		auto jobIter = needJob.begin();
-
-		for (auto &jobString : needJobDatas)
-		{
-			(*jobIter) = JobMng::GetInstance()->GetDataFromName(jobString.get<AString>());
-			++jobIter;
-		}
+		needJob.LoadJson(jsonData["NeedJob"]);
 
 		return true;
 	}
@@ -65,33 +54,10 @@ namespace Giraffe
 		BaseObject::ShowDebug();
 
 		LOG(INFO) << "AbleRoles >";
-		if (ableRoles.empty())
-		{
-			LOG(INFO) << "  Empty";
-		}
-		else
-		{
-			for (auto &roleWptr : ableRoles)
-			{
-				auto role = roleWptr.lock();
-				LOG(INFO) << "  " << StringConv(role->GetName());
-			}
-		}
+		ableRoles.ShowDebug();
 
 		LOG(INFO) << "needJobs >";
-		if (needJob.empty())
-		{
-			LOG(INFO) << "  Empty";
-		}
-		else
-		{
-			for (auto &jobWptr : needJob)
-			{
-				auto job = jobWptr.lock();
-				LOG(INFO) << "  " << StringConv(job->GetName());
-			}
-
-		}
+		needJob.ShowDebug();
 
 
 		formMng.ShowDebug();

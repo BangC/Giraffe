@@ -101,14 +101,22 @@ namespace Giraffe
 				(*dataIter) = TypeMng::GetInstance()->GetDataFromName(dataStringKey.get<AString>());
 				++dataIter;
 			}
+			return true;
 		}
 
 		virtual void ShowDebug()
 		{
-			for (auto &dataWptr : dataLink)
+			if (dataLink.empty())
 			{
-				auto dataSptr = dataWptr.lock();
-				LOG(INFO) << "  " << StringConv(dataSptr->GetName());
+				LOG(INFO) << "  Empty";
+			}
+			else
+			{
+				for (auto &dataWptr : dataLink)
+				{
+					auto dataSptr = dataWptr.lock();
+					LOG(INFO) << "  " << StringConv(dataSptr->GetName());
+				}
 			}
 		}
 
@@ -141,11 +149,19 @@ namespace Giraffe
 			dataList.resize(nextSize);
 		}
 
+		Bool8 Append(SharedPtr<TypeData> &insertData)
+		{
+			dataList.push_back(insertData);
+			dataMap[insertData->GetName()] = insertData;
+			return true;
+		}
+
 		virtual Bool8 LoadJson(JsonData &jArray)
 		{
 			Bool8 returnResult = false;
-			dataList.resize(jArray.size());
-			auto dataIter = dataList.begin();
+			Size32 preSize = dataList.size();
+			dataList.resize(preSize + jArray.size());
+			auto dataIter = dataList.begin() + preSize;
 
 			for (auto& element : jArray)
 			{
@@ -165,8 +181,9 @@ namespace Giraffe
 		Bool8 LoadJson(JsonData &jArray, TypeInit& initData)
 		{
 			Bool8 returnResult = false;
-			dataList.resize(jArray.size());
-			auto dataIter = dataList.begin();
+			Size32 preSize = dataList.size();
+			dataList.resize(preSize + jArray.size());
+			auto dataIter = dataList.begin() + preSize;
 
 			for (auto& element : jArray)
 			{

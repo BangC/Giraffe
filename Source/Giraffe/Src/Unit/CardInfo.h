@@ -3,13 +3,14 @@
 
 #include "../Base/Type.h"
 
-#include "GameRole.h"
+#include "GameRoleMng.h"
 #include "CardUnit.h"
+#include "JobMng.h"
 
 
 namespace Giraffe
 {
-	class JobInfo;
+	//class JobMng;
 
 	class CardInfo : public BaseObject, public JsonLoader, public std::enable_shared_from_this<CardInfo>
 	{
@@ -22,8 +23,8 @@ namespace Giraffe
 		virtual void ShowDebug();
 
 	protected:
-		Vector<WeakPtr<JobInfo>> needJob;
-		Vector<WeakPtr<GameRole>> ableRoles;
+		BaseLinkMng<JobMng> needJob;
+		BaseLinkMng<GameRoleMng> ableRoles;
 
 		BaseObjectMng<CardUnit> formMng;
 	};

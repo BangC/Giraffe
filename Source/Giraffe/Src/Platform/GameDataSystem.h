@@ -4,10 +4,6 @@
 
 #include "../Base/Type.h"
 
-#include "../Unit/GameRoleMng.h"
-#include "../Unit/CardInfoMng.h"
-#include "../Unit/JobMng.h"
-
 namespace Giraffe
 {
 	class GameDataSystem : public BaseObject, public JsonLoader
@@ -22,5 +18,8 @@ namespace Giraffe
 
 
 	protected:
+// 		GameRoleMng::CreateInstance();
+// 		JobMng::CreateInstance();
+// 		CardInfoMng::CreateInstance();
 	};
 }

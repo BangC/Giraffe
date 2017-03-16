@@ -4,10 +4,10 @@
 
 #include "../Base/Type.h"
 
-#include "CardInfo.h"
 
 namespace Giraffe
 {
+	class CardInfo;
 	class JobInfo : public BaseObject, public JsonLoader
 	{
 	public:

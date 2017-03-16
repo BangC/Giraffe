@@ -19,6 +19,9 @@ namespace Giraffe
 		virtual Bool8 LoadJson(JsonData &jsonData);
 		virtual void ShowDebug();
 
+	public:
+		Bool8 SetBaseCard();
+
 	protected:
 		WeakPtr<CardInfo> infoData;
 		Bool8 goldFome;

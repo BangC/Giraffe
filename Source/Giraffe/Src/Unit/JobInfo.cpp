@@ -2,6 +2,7 @@
 #include "../Base/Type.h"
 
 #include "JobInfo.h"
+#include "CardInfo.h"
 
 namespace Giraffe
 {
